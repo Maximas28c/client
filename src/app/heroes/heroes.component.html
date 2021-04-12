@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+        <form
+         [formGroup]="this.searchFormGroup"
+        >
+          <input
+           class="form-control"
+           type="text"
+           placeholder="Search"
+           aria-label="Search"
+           formControlName="searchInput"
+          >
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="heading-container">
+    <h1 class="display-1">Heroes list for AVA.CODES</h1>
+  </div>
+<div class="heroes-cards_collection">
+    <div
+     *ngFor="let hero of this.heroes; let i = index"
+     class="hero-card_container"
+    >
+        <div class="card" style="width: 18rem;">
+            <img src="https://i.pinimg.com/originals/95/e4/fd/95e4fd78946f22995eedd9a66e9b794d.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Name: {{hero.name}}</h5>
+              <p class="card-text">Height: {{hero.height}}cm.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Mass: {{hero.mass}}</li>
+              <li class="list-group-item">Skin: {{hero.skin_color}}</li>
+              <li class="list-group-item">Eyes: {{hero.eye_color}}</li>
+              <li class="list-group-item">Birth: {{hero.birth_year}}</li>
+              <li class="list-group-item">Birth: {{hero.gender}}</li>
+            </ul>
+            <div class="card-body">
+                <button
+                 class="btn btn-primary"
+                 [routerLink]="['hero',i]"
+                >
+                <i class="fas fa-external-link-alt"></i>
+                </button>
+            </div>
+          </div>
+    </div>
+</div>
